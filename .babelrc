@@ -1,0 +1,14 @@
+// .babelrc は JSON だがコメントが書ける
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // usage にすると Browserslist の指定に応じて Polyfill を入れられる
+        "useBuiltIns": "usage",
+        // Polyfill のために使用する core-js のバージョンを指定する
+        "corejs": 3
+      }
+    ]
+  ]
+}

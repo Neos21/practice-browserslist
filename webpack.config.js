@@ -16,6 +16,15 @@ module.exports = {
   ],
   module: {
     rules: [
+      // ECMAScript をトランスパイルする
+      {
+        test: (/\.js$/u),
+        use: [{
+          loader: 'babel-loader'
+          // オプションは .babelrc で指定する
+        }],
+        exclude: (/node_modules/u)
+      },
       // SCSS を CSS ファイルとして出力する
       {
         test: (/\.s(a|c)ss$/u),
@@ -24,7 +33,7 @@ module.exports = {
           // sass-loader で SCSS から CSS に変換 → postcss-loader (PostCSS) で Autoprefixer を適用し CSS 圧縮 → css-loader で @import などを解決 → mini-css-extract-plugin で CSS ファイルとして書き出す
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader',
+          'postcss-loader',  // Autoprefixer の指定は postcss.config.js で行う
           'sass-loader'
         ]
       }
