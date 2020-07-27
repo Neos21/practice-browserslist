@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    // JavaScript ファイルを読み込むために指定する
+    "allowJs": true,
+    // VSCode 上の「入力ファイルを上書きすることになるため、src/another.js を書き込めません。」エラーを回避するために宣言のみ記載・Webpack がファイル出力するため使用されない
+    "outDir": "",
+    
+    // 以下テキトーに設定…
+    
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    
+    "esModuleInterop": true
+  },
+  "include": ["src/"],
+  "exclude": ["node_modules/"]
+}

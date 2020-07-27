@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',  // モード指定
-  entry: './src/js/main.js',  // エントリポイント
+  entry: './src/js/main.ts',  // エントリポイント
   // 出力先パス・ファイル名
   output: {
     path    : path.resolve(__dirname, 'dist/'),
@@ -14,15 +14,19 @@ module.exports = {
       filename: '/css/[name].css'
     })
   ],
+  resolve: {
+    // デフォルトでは拡張子 .ts を取得できないため指定する (import の解決などに使用する)
+		extensions: ['.ts', '.js']
+	},
   module: {
     rules: [
       // ECMAScript をトランスパイルする
       {
-        test: (/\.js$/u),
-        use: [{
-          loader: 'babel-loader'
-          // オプションは .babelrc で指定する
-        }],
+        test: [(/\.ts$/u), (/\.js$/u)],
+        use: [
+          'babel-loader',  // オプションは .babelrc で指定する
+          'ts-loader'      // tsconfig.json も参照
+        ],
         exclude: (/node_modules/u)
       },
       // SCSS を CSS ファイルとして出力する
