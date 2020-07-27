@@ -1,0 +1,14 @@
+.container {
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template: "header  header"  1fr
+                 "nav     main  "  minmax(100px, 2fr)
+                 "nav     footer"  1fr /
+                  300px   1fr;
+  
+  header { grid-area: header; }
+  nav    { grid-area: nav   ; }
+  main   { grid-area: main  ; }
+  footer { grid-area: footer; }
+}

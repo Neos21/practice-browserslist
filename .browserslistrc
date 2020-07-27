@@ -1,0 +1,7 @@
+> 5%
+last 2 versions
+Firefox ESR
+dead
+
+# IE に対応させる
+ie >= 6
