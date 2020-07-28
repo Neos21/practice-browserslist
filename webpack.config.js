@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',  // モード指定
-  entry: './src/js/main.ts',  // エントリポイント
+  entry: './src/ts/main.ts',  // エントリポイント
   // 出力先パス・ファイル名
   output: {
     path    : path.resolve(__dirname, 'dist/'),
@@ -31,7 +31,7 @@ module.exports = {
       },
       // SCSS を CSS ファイルとして出力する
       {
-        test: (/\.s(a|c)ss$/u),
+        test: (/\.(sa|sc|c)ss$/u),
         use: [
           // Loader は最後のモノから順に適用される
           // sass-loader で SCSS から CSS に変換 → postcss-loader (PostCSS) で Autoprefixer を適用し CSS 圧縮 → css-loader で @import などを解決 → mini-css-extract-plugin で CSS ファイルとして書き出す
