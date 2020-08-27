@@ -16,8 +16,8 @@ module.exports = {
   ],
   resolve: {
     // デフォルトでは拡張子 .ts を取得できないため指定する (import の解決などに使用する)
-		extensions: ['.ts', '.js']
-	},
+    extensions: ['.ts', '.js']
+  },
   module: {
     rules: [
       // ECMAScript をトランスパイルする
