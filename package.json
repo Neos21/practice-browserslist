@@ -6,7 +6,7 @@
     "start": "npm run build && node ./dist/js/main.js",
     "build": "webpack"
   },
-  "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "author": "Neo <neos21@gmail.com> (https://neos21.net/)",
   "license": "MIT",
   "homepage": "https://github.com/Neos21/practice-browserslist#readme",
   "repository": {
