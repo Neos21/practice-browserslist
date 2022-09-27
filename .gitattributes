@@ -1,2 +1,3 @@
-# 言語判定に認識させる
+# Browserslist のみ言語判定に認識させる
+* linguist-detectable=false
 *.browserslistrc linguist-detectable=true
